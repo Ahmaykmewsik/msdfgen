@@ -6,7 +6,7 @@
  *
  */
 
-#ifdef MSDFGEN_STANDALONE
+// #ifdef MSDFGEN_STANDALONE
 
 #define _USE_MATH_DEFINES
 #define _CRT_SECURE_NO_WARNINGS
@@ -1336,4 +1336,4 @@ int main(int argc, const char * const *argv) {
     return 0;
 }
 
-#endif
+// #endif
