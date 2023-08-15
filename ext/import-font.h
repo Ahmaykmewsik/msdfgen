@@ -85,4 +85,8 @@ bool setFontVariationAxis(FreetypeHandle *library, FontHandle *font, const char 
 bool listFontVariationAxes(std::vector<FontVariationAxis> &axes, FreetypeHandle *library, FontHandle *font);
 #endif
 
+/// Custom: expose some internal name info 
+const char *getFamilyName(FontHandle *font);
+const char *getStyleName(FontHandle *font);
+
 }

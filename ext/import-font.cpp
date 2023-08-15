@@ -42,10 +42,12 @@ class FontHandle {
     friend bool getKerning(double &output, FontHandle *font, unicode_t unicode1, unicode_t unicode2);
     friend bool setFontVariationAxis(FreetypeHandle *library, FontHandle *font, const char *name, double coordinate);
     friend bool listFontVariationAxes(std::vector<FontVariationAxis> &axes, FreetypeHandle *library, FontHandle *font);
+    friend const char *getFamilyName(FontHandle *font);
+    friend const char *getStyleName(FontHandle *font);
 
+public:
     FT_Face face;
     bool ownership;
-
 };
 
 struct FtContext {
@@ -268,6 +270,16 @@ bool listFontVariationAxes(std::vector<FontVariationAxis> &axes, FreetypeHandle 
         return true;
     }
     return false;
+}
+
+const char *getFamilyName(FontHandle *font) {
+    const char *result = font->face->family_name;
+    return result;
+}
+
+const char *getStyleName(FontHandle *font) {
+    const char *result = font->face->style_name;
+    return result;
 }
 
 #endif
